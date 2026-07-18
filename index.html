@@ -1,11 +1,463 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Azarias Uniformes | Confecção de Uniformes em Bauru</title>
+    <meta name="description" content="Confecção especializada em uniformes escolares, esportivos, profissionais e camisas comemorativas em Bauru. Qualidade e alta durabilidade. Peça seu orçamento.">
+    <style>
+        :root {
+            --bg-dark: #121212;
+            --bg-card: #1c1c1e;
+            --accent-gold: #c5a880;
+            --text-main: #f5f5f7;
+            --text-sub: #a1a1a6;
+            --white: #ffffff;
+            --whatsapp-color: #25d366;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: rgba(18, 18, 18, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-text {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--white);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-top: -2px;
+        }
+
+        .sublogo-text {
+            font-size: 11px;
+            font-weight: 400;
+            color: var(--accent-gold);
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            margin-top: -4px;
+        }
+
+        .btn-header {
+            border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            padding: 8px 18px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-header:hover {
+            background-color: var(--accent-gold);
+            color: var(--bg-dark);
+        }
+
+        .hero {
+            padding: 100px 20px;
+            text-align: center;
+            background: radial-gradient(circle at top, #2c2c2e 0%, #121212 70%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+            color: var(--white);
+        }
+
+        .hero h1 span {
+            color: var(--accent-gold);
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: var(--text-sub);
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        .btn-main {
+            background-color: var(--accent-gold);
+            color: var(--bg-dark);
+            padding: 16px 36px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            display: inline-block;
+            transition: transform 0.2s, background-color 0.3s;
+            box-shadow: 0 4px 20px rgba(197, 168, 128, 0.2);
+        }
+
+        .btn-main:hover {
+            background-color: var(--white);
+            transform: translateY(-2px);
+        }
+
+        .services {
+            padding: 90px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: var(--accent-gold);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--bg-card);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+            padding: 40px 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-gold);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-icon {
+            margin-bottom: 25px;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .card h3 {
+            font-size: 20px;
+            color: var(--white);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 14.5px;
+            color: var(--text-sub);
+        }
+
+        .budget-section {
+            background-color: #161617;
+            padding: 90px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            padding: 45px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+
+        .form-container h2 {
+            text-align: center;
+            font-size: 26px;
+            margin-bottom: 30px;
+            color: var(--white);
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 9px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-main);
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 13px;
+            background-color: var(--bg-dark);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            font-size: 16px;
+            color: var(--white);
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .btn-submit {
+            width: 100%;
+            background-color: var(--whatsapp-color);
+            color: var(--white);
+            border: none;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 700;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-submit:hover {
+            background-color: #1ebd5e;
+            transform: translateY(-1px);
+        }
+
+        footer {
+            background-color: var(--bg-dark);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 50px 20px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        footer p {
+            margin-bottom: 12px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: var(--whatsapp-color);
+            color: var(--white);
+            border-radius: 50%;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s ease, background-color 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) rotate(5deg);
+            background-color: #1ebd5e;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 34px; }
+            .hero p { font-size: 16px; }
+            .form-container { padding: 25px; }
+            .nav-container { flex-direction: column; gap: 15px; }
+            .whatsapp-float { bottom: 20px; right: 20px; width: 55px; height: 55px; }
+        }
+    </style>
 </head>
 <body>
-    
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-box">
+                <svg width="65" height="52" viewBox="0 0 100 80" fill="none" xmlns="http://w3.org">
+                    <path d="M15 65 C 30 73, 70 73, 85 65" stroke="#c5a880" stroke-width="1.5" stroke-dasharray="3 3"/>
+                    <path d="M22 68 L46 16 L54 16 L78 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M34 48 L66 48" stroke="#ffffff" stroke-width="5"/>
+                    <path d="M50 10 L50 42" stroke="#c5a880" stroke-width="2.5" stroke-linecap="round"/>
+                    <circle cx="50" cy="15" r="1.2" fill="#121212"/>
+                </svg>
+                <div class="logo-text">Azarias</div>
+                <div class="sublogo-text">Uniformes</div>
+            </a>
+---
+
+### Parte 2: Cole logo abaixo da primeira parte para finalizar o arquivo
+
+```html
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sua confecção de excelência em <span>Uniformes</span></h1>
+            <p>Atendemos indústrias, comércios, escolas, eventos e ligas esportivas em Bauru e região. Alta costura, durabilidade máxima e pontualidade na entrega.</p>
+            <a href="#orcamento" class="btn-main">Fazer Orçamento Gratuito</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2 class="section-title">O Que <span>Produzimos</span></h2>
+        <div class="grid">
+            <div class="card">
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c5a880" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10v6M12 2v20M2 10h20"/></svg>
+                </div>
+                <h3>Uniformes Escolares</h3>
+                <p>Modelos confortáveis e resistentes para aguentar a rotina escolar. Tecidos que não desbotam.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c5a880" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M6 12h12M12 6v12"/></svg>
+                </div>
+                <h3>Uniformes Esportivos</h3>
+                <p>Kits profissionais e amadores com recorte tecnológico dry-fit, sublimação total e caimento perfeito.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c5a880" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 7.83l-1.42-1.42 4.38-4.38a1 1 0 0 1 1.42 0l1 1a1 1 0 0 1 0 1.43zM10.5 18.5h-3v-3l9.26-9.26 3 3L10.5 18.5zM4 21h16"/></svg>
+                </div>
+                <h3>Camisas Comemorativas</h3>
+                <p>Peças exclusivas e estampas nítidas para casamentos, formaturas, datas de igrejas e eventos corporativos.</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#c5a880" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <h3>Uniformes Profissionais</h3>
+                <p>Camisas polo de alta qualidade, calças de brim operacionais e jalecos para destacar o seu negócio.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="budget-section" id="orcamento">
+        <div class="form-container">
+            <h2>Simulador de Pedido rápido</h2>
+            <form id="formOrcamento" onsubmit="enviarWhatsApp(event)">
+                <div class="form-group">
+                    <label for="nome">Seu Nome ou Empresa</label>
+                    <input type="text" id="nome" placeholder="Ex: João Silva ou Oficina Bauru" required>
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Selecione o segmento</label>
+                    <select id="tipo" required>
+                        <option value="" disabled selected>Escolha uma opção</option>
+                        <option value="Escolares">Uniformes Escolares</option>
+                        <option value="Esportivos">Uniformes Esportivos</option>
+                        <option value="Camisas Comemorativas">Camisas Comemorativas</option>
+                        <option value="Profissionais">Uniformes Profissionais</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="quantidade">Quantidade de Peças</label>
+                    <input type="number" id="quantidade" min="1" placeholder="Ex: 15" required>
+                </div>
+                <div class="form-group">
+                    <label for="detalhes">Observações Adicionais (Opcional)</label>
+                    <textarea id="detalhes" rows="3" placeholder="Ex: Gostaria de tecido Dry-Fit, ou Camisas Polo com bordado no peito..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.93 0c3.166.001 6.143 1.233 8.383 3.474 2.24 2.24 3.469 5.221 3.468 8.387-.003 6.583-5.339 11.931-11.871 11.931-2.006-.001-3.978-.51-5.734-1.479L0 24zm6.59-4.846c1.652.981 3.272 1.498 4.747 1.499 5.421 0 9.832-4.412 9.835-9.835.001-2.627-1.023-5.097-2.885-6.96-1.862-1.863-4.334-2.886-6.963-2.887-5.425 0-9.837 4.412-9.84 9.837-.001 1.62.463 3.201 1.343 4.582l-.4 1.464 1.48-.387z"/></svg>
+                    Enviar Pedido de Orçamento
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Azarias Uniformes. Todos os direitos reservados.</p>
+        <p>Código limpo e otimizado para o Google.</p>
+        <div class="contact-info">
+            Instagram: @azariasuniformes &nbsp;|&nbsp; WhatsApp: (14) 99111-2163
+        </div>
+    </footer>
+
+    <a href="https://wa.me" class="whatsapp-float" target="_blank" aria-label="Fale direto conosco">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.93 0c3.166.001 6.143 1.233 8.383 3.474 2.24 2.24 3.469 5.221 3.468 8.387-.003 6.583-5.339 11.931-11.871 11.931-2.006-.001-3.978-.51-5.734-1.479L0 24zm6.59-4.846c1.652.981 3.272 1.498 4.747 1.499 5.421 0 9.832-4.412 9.835-9.835.001-2.627-1.023-5.097-2.885-6.96-1.862-1.863-4.334-2.886-6.963-2.887-5.425 0-9.837 4.412-9.84 9.837-.001 1.62.463 3.201 1.343 4.582l-.4 1.464 1.48-.387z"/></svg>
+    </a>
+
+    <script>
+        function enviarWhatsApp(event) {
+            event.preventDefault();
+
+            const nome = document.getElementById('nome').value;
+            const tipo = document.getElementById('tipo').value;
+            const qtd = document.getElementById('quantidade').value;
+            const detalhes = document.getElementById('detalhes').value;
+            
+            const dddNumero = "5514991112163"; 
+            
+            let mensagem = `Olá, tudo bem? Me chamo *${nome}*.\n\n`;
+            mensagem += `Gostaria de um orçamento para a Azarias Uniformes:\n`;
+            mensagem += `• *Segmento:* Uniformes ${tipo}\n`;
+            mensagem += `• *Quantidade:* ${qtd} unidades\n`;
+            
+            if(detalhes.trim() !== "") {
+                mensagem += `• *Observações:* ${detalhes}\n`;
+            }
+            
+            mensagem += `\n_Vim direto pelo formulário do site!_`;
+            
+            const linkCompleto = `https://whatsapp.com{dddNumero}&text=${encodeURIComponent(mensagem)}`;
+            
+            window.open(linkCompleto, '_blank');
+        }
+    </script>
 </body>
-</html>
+        </html>
