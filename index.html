@@ -73,22 +73,6 @@
             margin-top: -4px;
         }
 
-        .btn-header {
-            border: 1px solid var(--accent-gold);
-            color: var(--accent-gold);
-            padding: 8px 18px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 14px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-header:hover {
-            background-color: var(--accent-gold);
-            color: var(--bg-dark);
-        }
-
         .hero {
             padding: 100px 20px;
             text-align: center;
@@ -329,7 +313,7 @@
     <header>
         <div class="nav-container">
             <a href="#" class="logo-box">
-                <svg width="65" height="52" viewBox="0 0 100 80" fill="none" xmlns="http://w3.org">
+                <svg width="65" height="52" viewBox="0 0 100 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M15 65 C 30 73, 70 73, 85 65" stroke="#c5a880" stroke-width="1.5" stroke-dasharray="3 3"/>
                     <path d="M22 68 L46 16 L54 16 L78 68" stroke="#ffffff" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M34 48 L66 48" stroke="#ffffff" stroke-width="5"/>
@@ -339,11 +323,9 @@
                 <div class="logo-text">Azarias</div>
                 <div class="sublogo-text">Uniformes</div>
             </a>
----
+        </div>
+    </header>
 
-### Parte 2: Cole logo abaixo da primeira parte para finalizar o arquivo
-
-```html
     <section class="hero">
         <div class="hero-content">
             <h1>Sua confecção de excelência em <span>Uniformes</span></h1>
@@ -428,7 +410,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me" class="whatsapp-float" target="_blank" aria-label="Fale direto conosco">
+    <a href="https://wa.me/5514991112163" class="whatsapp-float" target="_blank" aria-label="Fale direto conosco">
         <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397 0 11.93 0c3.166.001 6.143 1.233 8.383 3.474 2.24 2.24 3.469 5.221 3.468 8.387-.003 6.583-5.339 11.931-11.871 11.931-2.006-.001-3.978-.51-5.734-1.479L0 24zm6.59-4.846c1.652.981 3.272 1.498 4.747 1.499 5.421 0 9.832-4.412 9.835-9.835.001-2.627-1.023-5.097-2.885-6.96-1.862-1.863-4.334-2.886-6.963-2.887-5.425 0-9.837 4.412-9.84 9.837-.001 1.62.463 3.201 1.343 4.582l-.4 1.464 1.48-.387z"/></svg>
     </a>
 
@@ -454,10 +436,11 @@
             
             mensagem += `\n_Vim direto pelo formulário do site!_`;
             
-            const linkCompleto = `https://whatsapp.com{dddNumero}&text=${encodeURIComponent(mensagem)}`;
+            const linkCompleto = `https://wa.me/${dddNumero}?text=${encodeURIComponent(mensagem)}`;
             
             window.open(linkCompleto, '_blank');
         }
     </script>
 </body>
-        </html>
+</html>
+
